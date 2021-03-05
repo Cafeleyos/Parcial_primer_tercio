@@ -21,4 +21,14 @@ public class Iteration {
         this.activities.add(activity);
     }
 
+    public int countOpenActivities() {
+        int counter = 0;
+        for (Activity A: activities) {
+            if (A.isActive()) {
+                counter++;
+            }
+
+        }
+        return counter;
+    }
 }

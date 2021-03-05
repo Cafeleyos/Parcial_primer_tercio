@@ -26,9 +26,18 @@ public class SabanaResearch {
      * Create a summary entry in the current date.
      * - Calculate the count of active projects.
      *
+     * INVARIANTE
+     *
      * @return The new Summary entry.
      */
     public Summary createSummaryEntry() {
+        int ap = 0;
+        for(Group g : groups) {
+            ap = g.countActiveProjects();
+        }
+
         return null;
     }
+
+
 }

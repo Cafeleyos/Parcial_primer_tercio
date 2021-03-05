@@ -17,4 +17,10 @@ public class Group {
         this.projects.add(plan);
     }
 
+    public int countActiveProjects() {
+        for(Project p : projects) {
+            p.isActive();
+        }
+        return 0;
+    }
 }
