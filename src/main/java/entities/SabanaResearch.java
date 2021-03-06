@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,7 @@ public class SabanaResearch {
 
     private List<Group> groups;
     private List<Summary> summaries;
+    private LocalDate today = LocalDate.now();
 
     public SabanaResearch(List<Group> groups) {
         this.groups = groups;
@@ -33,11 +35,14 @@ public class SabanaResearch {
     public Summary createSummaryEntry() {
         int ap = 0;
         for(Group g : groups) {
-            ap = g.countActiveProjects();
+            ap =+ g.countActiveProjects();
         }
-
-        return null;
+        Summary newSummary = new Summary(today, ap);
+        addSummary(newSummary);
+        return newSummary;
     }
 
-
+    public void addSummary(Summary s) {
+        this.summaries.add(s);
+    }
 }

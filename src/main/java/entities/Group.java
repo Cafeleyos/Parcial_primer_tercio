@@ -18,9 +18,12 @@ public class Group {
     }
 
     public int countActiveProjects() {
+        int result = 0;
         for(Project p : projects) {
-            p.isActive();
+            if (p.isActive()){
+                result++;
+            }
         }
-        return 0;
+        return result;
     }
 }
