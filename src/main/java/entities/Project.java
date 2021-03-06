@@ -11,7 +11,8 @@ public class Project {
     private LocalDate dateEnd;
     private Group group;
     private List<Iteration> iterations;
-    private LocalDate today;
+
+
     public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
         this.name = name;
         this.dateInit = dateInit;
@@ -42,9 +43,9 @@ public class Project {
     public boolean isActive() {
         int counter =0;
 
-       // if (dateEnd.isBefore(true)){
-
-       // }
+       if (dateEnd.isBefore(SabanaResearch.today)){
+            return false;
+       }
 
         for (Iteration i: iterations) {
             counter = +i.countOpenActivities();

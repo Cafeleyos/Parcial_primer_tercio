@@ -26,7 +26,10 @@ public class Activity {
      */
     public boolean isActive() {
         boolean result = false;
-        if (this.state.equals("active") || this.state.equals("pending")){
+        if (this.state.equals("active")){
+            result = true;
+        }
+        if (this.state.equals("pending")) {
             result = true;
         }
         return result;
